@@ -1,0 +1,591 @@
+.page {
+    display: none;
+
+    // Страница Покормить
+    &-feeding {
+
+        &__buttons-bar {
+            margin-top: 2rem;
+        }
+
+        &__button {
+            margin: 0 0.25rem 0.5rem 0;
+        }
+    }
+
+    // Страница Расписание
+    &-schedule {
+        &__wrapper {
+            display: flex;
+
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &__picture-block {
+            padding-right: 1.875rem;
+            overflow: hidden;
+            vertical-align: middle;
+            box-sizing: border-box;
+
+            @media (max-width: 767px) {
+                margin: 0 auto;
+                padding: 0;
+                width: 255px;
+            }
+        }
+
+        &__picture {
+            min-width: 255px;
+            height: 255px;
+        }
+
+        &__main {
+            width: 825px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-timepanel {
+            color: #fff;
+            font-size: 1rem;
+
+            &__card {
+                position: relative;
+                padding: 1.25rem;
+                background-color: #343a40;
+                border-radius: 0.25rem;
+                margin-bottom: 1rem;
+
+                @media (max-width: 450px) {
+                    padding: 1rem;
+                }
+            }
+
+            &__close {
+                position: absolute;
+                top: 0.75rem;
+                right: 0.75rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                fill: #fff;
+                cursor: pointer;
+            }
+
+            &__time {
+                font-size: 4rem;
+                font-weight: lighter;
+            }
+
+            &__repeat-wrap {
+                display: flex;
+                margin-top: 1rem;
+
+                @media (max-width: 410px) {
+                    flex-wrap: wrap;
+                }
+            }
+
+            &__repeat-title {
+                display: block;
+                width: 20%;
+                margin: auto 0;
+
+                @media (max-width: 640px) {
+                    width: 26%;
+                }
+            }
+
+            &__repeat-value {
+                display: flex;
+
+                @media (max-width: 450px) {
+                    margin-top: 1rem;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+            }
+
+            .card-weekday {
+                padding: 0.25rem 0.4rem;
+                line-height: 1;
+                margin: 0 10px 0 0;
+                font-weight: bold;
+
+                @media (max-width: 450px) {
+                    margin: 0;
+                }
+            }
+
+            &__size-wrap {
+                display: flex;
+                margin-top: 1rem;
+            }
+
+            &__size-title {
+                display: block;
+                width: 20%;
+                margin: auto 0;
+
+                @media (max-width: 640px) {
+                    width: 26%;
+                }
+            }
+
+            &__size-value {
+                display: flex;
+            }
+        }
+
+        .schedule-infopanel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-newpanel {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 100px 20px 0 20px;
+
+            @media (max-width: 640px) {
+                padding: 20px;
+            }
+
+            &__inner {
+                margin: auto;
+                max-width: 25rem;
+            }
+
+            &__header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #343a40;
+                border-radius: 0.25rem 0.25rem 0 0;
+                padding: 1rem;
+
+                &-text {
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+
+            &__close {
+                width: 1.5rem;
+                height: 1.5rem;
+                fill: #fff;
+                cursor: pointer;
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                border-radius: 0 0 0.25rem 0.25rem;
+                padding: 1rem;
+
+                &-text {
+                    margin-bottom: 1rem;
+
+                    &-right {
+                        margin-bottom: 1rem;
+                        text-align: right;
+                        font-size: 0.875rem;
+
+                        &:hover {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .size-food {
+                    margin-right: 0.5rem;
+                }
+            }
+
+            &__time {
+                padding: 0.5rem;
+                width: 150px;
+                font-size: 1.5rem;
+                line-height: 1.5;
+                color: #212529;
+                border: 1px solid rgba(0, 0, 0, .125);
+                border-radius: 0.25rem;
+                margin-bottom: 1rem;
+            }
+
+            &__footer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: right;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(0, 0, 0, .125);
+
+                &-button{
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    // Страница Настройки
+    &-settings {
+
+        &__wrapper {
+            display: flex;
+
+            @media (max-width: 767px) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &__picture-block {
+            padding-right: 1.875rem;
+
+            @media (max-width: 767px) {
+                margin: 0 auto;
+                padding: 0;
+                width: 255px;
+            }
+        }
+
+        &__picture {
+            width: 255px;
+            height: 255px;
+        }
+
+        &__main {
+            width: 825px;
+
+            .accordion {
+                &__card {
+                    border: 1px solid rgba(0, 0, 0, 0.125);
+                    border-radius: 0.25rem;
+                }
+
+                &__header {
+                    display: inline-flex;
+                    padding: 0.75rem 1.25rem;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                    background-color: #343a40;
+                    border-radius: 0.25rem 0.25rem 0 0;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: #fff;
+                    font-weight: bolder;
+                    width: 100%;
+                    transition: 0.4s;
+                    text-align: left;
+                    align-items: center;
+                }
+
+                &__content {
+                    background-color: #fff;
+                    overflow: hidden;
+                    max-height: 0;
+                    transition: max-height 0.5s ease;
+
+                    &_show {
+                        max-height: 2000px;
+                        transition: max-height 0.5s ease;
+                    }
+                }
+
+                &__content-inner {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 1.25rem;
+                }
+
+                &__content-text {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: #212529;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .wifipanel {
+                width: 100%;
+                display: none;
+                flex-wrap: wrap;
+                font-size: 1rem;
+
+                &__header {
+                    width: 100%;
+                    display: flex;
+
+
+                    border: 1px solid rgba(0, 0, 0, .125);
+                    border-bottom: none;
+                    background-color: #343a40;
+                    color: #fff;
+                    font-weight: bolder;
+
+                    &-name {
+                        width: 80%;
+                        padding: 0.75rem 1.25rem;
+                        border-right: 1px solid grey;
+                        margin: auto 0;
+                    }
+
+                    &-level {
+                        width: 20%;
+                        min-width: 100px;
+                        padding: 0.75rem 1.25rem;
+                    }
+                }
+
+                &__card {
+                    width: 100%;
+                    display: flex;
+                    border: 1px solid rgba(0, 0, 0, .125);
+                    border-top: none;
+                    color: #212529;
+
+                    &-name {
+                        width: 80%;
+                        padding: 0.75rem 1.25rem;
+                        border-right: 1px solid rgba(0, 0, 0, .125);
+
+                        &-icon {
+                            width: 1rem;
+                            height: 1rem;
+                            margin-right: 0.5rem;
+                        }
+                    }
+
+                    &-level {
+                        display: flex;
+                        width: 20%;
+                        min-width: 100px;
+                        padding: 0.75rem 1.25rem;
+
+                        &-icon {
+                            width: 2rem;
+                            height: 1rem;
+                            margin: auto 0;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &-target {
+                        background-color: #17a2b8;
+
+                        .wifipanel__card-name {
+                            color: #fff;
+                        }
+
+                        .wifipanel__card-name-icon {
+                            fill: #fff;
+                        }
+                    }
+                }
+
+                &_show {
+                    display: flex;
+                }
+            }
+
+            .wifisettings {
+                width: 100%;
+                display: none;
+                flex-wrap: wrap;
+                font-size: 1rem;
+                margin-top: 1rem;
+
+                &_show {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+
+            .wifimanual {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+
+                &__inner {
+                    width: 100%;
+                }
+
+                &__input {
+                    width: 140px;
+                }
+
+                &_hide {
+                    display: none;
+                }
+            }
+
+            .wifilocal {
+                width: 100%;
+
+                &__form {
+                    display: none;
+
+                    &_show {
+                        display: block;
+                    }
+                }
+            }
+
+            .account {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .datatime {
+                &__text {
+                    width: 100%;
+                }
+
+                &__current {
+                    margin: 0 auto 1rem auto;
+                    font-size: 4rem;
+                    font-weight: lighter;
+                }
+
+                &__settings {
+                    width: 100%;
+                }
+
+                &__row {
+                    display: flex;
+                    margin-bottom: 1rem;
+                }
+
+                &__namecolumn {
+                    display: block;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: #212529;
+                    font-weight: bold;
+                    width: 30%;
+                    margin: auto 0;
+
+                    @media (max-width: 640px) {
+                        width: 55%;
+                    }
+                }
+
+                &__valuecolumn {
+                    display: block;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: #212529;
+                    width: 70%;
+                    margin: auto 0;
+
+                    @media (max-width: 640px) {
+                        width: 45%;
+                    }
+                }
+
+                &__controlpanel {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .statussystem {
+                &__controlpanel {
+                    width: 100%;
+                }
+
+                &__tabpanel {
+                    width: 100%;
+
+                    &-header {
+                        width: 100%;
+                        overflow: hidden;
+                        background-color: #343a40;
+                        border: 1px solid #ccc;
+                        border-radius: 0.25rem;
+                    }
+
+                    &-tab {
+                        display: block;
+                        color: #fff;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                        font-weight: bolder;
+                        padding: 0.75rem 1.25rem;
+                        background-color: inherit;
+                        float: left;
+                        transition: 0.5s;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &_active {
+                            background-color: #6c757d;
+                        }
+                    }
+
+                    &-content {
+                        display: none;
+                    }
+                }
+
+                &__table {
+                    display: flex;
+                    flex-wrap: wrap;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: #212529;
+                }
+
+                &__row {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &:nth-child(odd) {
+                        background-color: rgba(0, 0, 0, 0.05);
+                    }
+                }
+
+                &__namecolumn {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 50%;
+                    padding: 0.75rem;
+                    border: 1px solid #ccc;
+                    border-top: none;
+                    border-right: none;
+                    align-items: center;
+                }
+
+                &__valuecolumn {
+                    display: flex;
+                    width: 50%;
+                    padding: 0.75rem;
+                    border: 1px solid #ccc;
+                    border-top: none;
+                    border-left: none;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    //Скрыть страницу-блок
+    &_show {
+        display: block;
+    }
+}

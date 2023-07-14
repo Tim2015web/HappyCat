@@ -1,0 +1,6 @@
+# Gulp
+node_modules
+package-lock.json
+
+# Старый проект
+old_version

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-arrows-rotate-dims { width: 512px; height: 512px; }
+ .svg-bars-dims { width: 30px; height: 30px; }
+ .svg-bolt-lightning-dims { width: 384px; height: 512px; }
+ .svg-caret-right-dims { width: 256px; height: 512px; }
+ .svg-circle-xmark-dims { width: 512px; height: 512px; }
+ .svg-clock-dims { width: 512px; height: 512px; }
+ .svg-cloud-arrow-down-dims { width: 640px; height: 512px; }
+ .svg-desktop-dims { width: 576px; height: 512px; }
+ .svg-floppy-disk-dims { width: 448px; height: 512px; }
+ .svg-folder-dims { width: 512px; height: 512px; }
+ .svg-gear-dims { width: 512px; height: 512px; }
+ .svg-globe-dims { width: 512px; height: 512px; }
+ .svg-lock-dims { width: 448px; height: 512px; }
+ .svg-lock-open-dims { width: 576px; height: 512px; }
+ .svg-plus-dims { width: 448px; height: 512px; }
+ .svg-power-off-dims { width: 512px; height: 512px; }
+ .svg-signal0-dims { width: 32px; height: 16px; }
+ .svg-signal1-dims { width: 32px; height: 16px; }
+ .svg-signal2-dims { width: 32px; height: 16px; }
+ .svg-signal3-dims { width: 32px; height: 16px; }
+ .svg-signal4-dims { width: 32px; height: 16px; }
+ .svg-spinner-dims { width: 512px; height: 512px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="arrows-rotate">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#arrows-rotate" class="svg-arrows-rotate-dims" alt="arrows-rotate">
+                    </div>
+                    <h2>arrows-rotate, </h2>
+                </li>
+             <li title="bars">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#bars" class="svg-bars-dims" alt="bars">
+                    </div>
+                    <h2>bars, </h2>
+                </li>
+             <li title="bolt-lightning">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#bolt-lightning" class="svg-bolt-lightning-dims" alt="bolt-lightning">
+                    </div>
+                    <h2>bolt-lightning, </h2>
+                </li>
+             <li title="caret-right">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#caret-right" class="svg-caret-right-dims" alt="caret-right">
+                    </div>
+                    <h2>caret-right, </h2>
+                </li>
+             <li title="circle-xmark">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#circle-xmark" class="svg-circle-xmark-dims" alt="circle-xmark">
+                    </div>
+                    <h2>circle-xmark, </h2>
+                </li>
+             <li title="clock">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#clock" class="svg-clock-dims" alt="clock">
+                    </div>
+                    <h2>clock, </h2>
+                </li>
+             <li title="cloud-arrow-down">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cloud-arrow-down" class="svg-cloud-arrow-down-dims" alt="cloud-arrow-down">
+                    </div>
+                    <h2>cloud-arrow-down, </h2>
+                </li>
+             <li title="desktop">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#desktop" class="svg-desktop-dims" alt="desktop">
+                    </div>
+                    <h2>desktop, </h2>
+                </li>
+             <li title="floppy-disk">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#floppy-disk" class="svg-floppy-disk-dims" alt="floppy-disk">
+                    </div>
+                    <h2>floppy-disk, </h2>
+                </li>
+             <li title="folder">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#folder" class="svg-folder-dims" alt="folder">
+                    </div>
+                    <h2>folder, </h2>
+                </li>
+             <li title="gear">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#gear" class="svg-gear-dims" alt="gear">
+                    </div>
+                    <h2>gear, </h2>
+                </li>
+             <li title="globe">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#globe" class="svg-globe-dims" alt="globe">
+                    </div>
+                    <h2>globe, </h2>
+                </li>
+             <li title="lock">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#lock" class="svg-lock-dims" alt="lock">
+                    </div>
+                    <h2>lock, </h2>
+                </li>
+             <li title="lock-open">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#lock-open" class="svg-lock-open-dims" alt="lock-open">
+                    </div>
+                    <h2>lock-open, </h2>
+                </li>
+             <li title="plus">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#plus" class="svg-plus-dims" alt="plus">
+                    </div>
+                    <h2>plus, </h2>
+                </li>
+             <li title="power-off">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#power-off" class="svg-power-off-dims" alt="power-off">
+                    </div>
+                    <h2>power-off, </h2>
+                </li>
+             <li title="signal0">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#signal0" class="svg-signal0-dims" alt="signal0">
+                    </div>
+                    <h2>signal0, </h2>
+                </li>
+             <li title="signal1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#signal1" class="svg-signal1-dims" alt="signal1">
+                    </div>
+                    <h2>signal1, </h2>
+                </li>
+             <li title="signal2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#signal2" class="svg-signal2-dims" alt="signal2">
+                    </div>
+                    <h2>signal2, </h2>
+                </li>
+             <li title="signal3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#signal3" class="svg-signal3-dims" alt="signal3">
+                    </div>
+                    <h2>signal3, </h2>
+                </li>
+             <li title="signal4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#signal4" class="svg-signal4-dims" alt="signal4">
+                    </div>
+                    <h2>signal4, </h2>
+                </li>
+             <li title="spinner">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#spinner" class="svg-spinner-dims" alt="spinner">
+                    </div>
+                    <h2>spinner, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Thu, 13 Jul 2023 09:56:04 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
